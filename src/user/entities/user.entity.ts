@@ -13,7 +13,7 @@ export class User extends Model {
 
   @Column(DataType.STRING)
   @ApiProperty()
-  password: number;
+  password: string;
 
   toJSON() {
     const user = { ...this.get() };
