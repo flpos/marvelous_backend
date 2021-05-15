@@ -21,6 +21,10 @@ export class UserService {
     return this.userRepository.findByPk(id);
   }
 
+  findByUsername(username: string) {
+    return this.userRepository.findOne({ where: { username } });
+  }
+
   update(id: number, updateUserDto: UpdateUserDto) {
     return this.userRepository.update(updateUserDto, { where: { id } });
   }
