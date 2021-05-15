@@ -9,6 +9,7 @@ async function bootstrap() {
     .setTitle('Marvelous')
     .setDescription('Descrição da API da aplicação Marvelous')
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
