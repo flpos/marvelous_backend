@@ -3,9 +3,11 @@ import {
   BeforeCreate,
   Column,
   DataType,
+  HasMany,
   Model,
   Table,
 } from 'sequelize-typescript';
+import { Favorite } from 'src/favorite/entities/favorite.entity';
 
 @Table({ timestamps: true })
 export class User extends Model {
@@ -20,6 +22,9 @@ export class User extends Model {
   @Column(DataType.STRING)
   @ApiProperty()
   password: string;
+
+  @HasMany(() => Favorite)
+  favorites: Favorite[];
 
   toJSON() {
     const user = { ...this.get() };
