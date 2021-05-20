@@ -27,7 +27,7 @@ export class FavoriteService {
     });
   }
 
-  remove(id: number, userId: number) {
-    return this.favoriteRepository.destroy({ where: { id, userId } });
+  remove(marvelId: string, userId: number) {
+    return this.favoriteRepository.destroy({ where: { marvelId, userId } });
   }
 }
